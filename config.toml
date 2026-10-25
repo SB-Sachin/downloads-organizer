@@ -1,0 +1,25 @@
+# downloads-organizer settings. Restart the service after editing:
+#   launchctl kickstart -k gui/$(id -u)/com.user.downloads-organizer
+
+watch_folder = "~/Downloads"
+model = "gemma3:12b"
+ollama_host = "http://localhost:11434"
+keep_alive = -1            # -1 keeps the model loaded in memory
+max_name_length = 60
+min_confidence = 0.4       # below this the file keeps its name and only gets a tag
+max_content_bytes_gb = 2   # larger files are named from metadata only
+date_prefix = false        # true prefixes names with the file's modification date
+tags = [
+    # school subjects
+    "school", "math", "science", "english", "history", "languages",
+    # hobbies and projects
+    "robotics", "electronics", "engineering", "3d-printing", "code", "scouts",
+    "music", "games", "sports",
+    # paperwork
+    "finance", "receipts", "forms", "legal", "health", "travel", "work",
+    # reference
+    "books", "manuals",
+    # by file kind
+    "screenshots", "images", "documents", "archives", "media", "installers",
+    "other",
+]
